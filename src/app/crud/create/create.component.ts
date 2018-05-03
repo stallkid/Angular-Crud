@@ -11,19 +11,18 @@ export class CreateComponent implements OnInit {
 
   title = 'Add Coin';
   angForm: FormGroup;
-  constructor(private coinService: CoinService, private fb: FormBuilder) {
+  constructor(private coinservice: CoinService, private fb: FormBuilder) {
     this.createForm();
-  }
+   }
   createForm() {
     this.angForm = this.fb.group({
-      name:['', Validators.required ],
-      price: ['', Validators.required]
-    });
+      name: ['', Validators.required ],
+      price: ['', Validators.required ]
+   });
   }
   addCoin(name, price) {
-    this.coinService.addCoin(name, price);
+      this.coinservice.addCoin(name, price);
   }
   ngOnInit() {
   }
-
 }
